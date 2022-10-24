@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>phonebook</title>
+</head>
+<body>
+    <center>
+    <center>List of all Student information in the database</center>
+    <br>
+    <table border="2">
+        <tr>
+            <th>SN</th>
+            <th>Subject</th>
+            <th>Grade</th>
+        </tr>
+
+        {% for school in  ssces %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ request.post.ssce.name }}</td>
+            <td>{{ ssce.regno }}</td>
+            </td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <h2><a href="{% url 'add_candidates' %}">Click to add</a></h2>
+    <h2><a href="{% url 'logout_page' %}">LOGOUT</a></h2>
+
+    {% if messages %}
+
+    {% for message in messages  %}
+    <h4>{{ message }}</h4>
+    {% endfor %}
+
+    {% endif %}
+</center>
+    
+</body>
+</html>
